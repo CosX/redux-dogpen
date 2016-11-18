@@ -1,0 +1,17 @@
+{
+  "name": "redux-console",
+  "version": "1.0.0",
+  "description": "Redux console application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "KFS",
+  "license": "MIT",
+  "devDependencies": {
+    "redux": "^3.6.0"
+  }
+}
