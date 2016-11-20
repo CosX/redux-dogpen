@@ -7,10 +7,10 @@ function dogPen(state = [], action) {
       return [
         ...state,
         {
-          name: action.name,
-          breed: action.breed,
-          sex: action.sex,
-          age: action.age
+          name: action.dog.name,
+          breed: action.dog.breed,
+          sex: action.dog.sex,
+          age: action.dog.age
         }
       ];
     case REMOVE_DOG:
@@ -18,9 +18,9 @@ function dogPen(state = [], action) {
       return state;
     case RENAME_DOG:
       return state.map((dog, index) => {
-        if (index === action.index) {
+        if (index === action.dog.index) {
           return Object.assign({}, dog, {
-            name: action.name
+            name: action.dog.name
           });
         }
       });
