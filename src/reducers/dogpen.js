@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { ADD_DOG, REMOVE_DOG, RENAME_DOG } from "../actionTypes"
+import { ADD_DOG, REMOVE_DOG, RENAME_DOG } from "../actiontypes/actionTypes"
 
 function dogPen(state = [], action) {
   switch (action.type) {

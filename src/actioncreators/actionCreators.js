@@ -1,4 +1,4 @@
-import { ADD_DOG, REMOVE_DOG, RENAME_DOG } from "./actionTypes"
+import { ADD_DOG, REMOVE_DOG, RENAME_DOG } from "../actiontypes/actionTypes"
 
 export function addDog(dog = {}) {
   return {

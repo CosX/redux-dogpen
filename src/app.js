@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import dogpenApp from './reducers/dogpen';
-import { addDog, removeDog, renameDog } from './actionCreators';
+import { addDog, removeDog, renameDog } from './actioncreators/actionCreators';
 let store = createStore(dogpenApp);
 
 store.dispatch(addDog({
