@@ -24,7 +24,7 @@ function dogPen(state = [], action) {
           });
         }
       });
-    case default:
+    default:
       return state;
   };
 }
