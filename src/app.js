@@ -1,6 +1,13 @@
-import { createStore } from 'redux';
-import dogpenApp from './reducers/dogpen';
-import { addDog, removeDog, renameDog } from './actioncreators/actionCreators';
+import { createStore, combineReducers } from 'redux';
+import dogpenreducer from './reducers/dogpen';
+import personreducer from './reducers/person';
+import { addDog, adoptDog, renameDog, addPerson } from './actioncreators/actionCreators';
+
+let dogpenApp = combineReducers({
+  dogpenreducer,
+  personreducer
+});
+
 let store = createStore(dogpenApp);
 
 store.dispatch(addDog({
@@ -35,7 +42,16 @@ store.dispatch(renameDog({
 console.log("--- STEVE GETS RENAMED ---");
 console.log(store.getState());
 
-store.dispatch(removeDog(2));
+store.dispatch(addPerson({
+  name: "Joe",
+  sex: "male",
+  dogs: []
+}));
 
-console.log("--- GEORGE GETS REMOVED FROM THE PEN ---");
+console.log("--- JOE WALKS IN THE PEN, HE HAS NO DOGS. POOR FELLOW. ---");
+console.log(store.getState());
+
+store.dispatch(adoptDog({dogindex: 2, personindex: 0}));
+
+console.log("--- GEORGE GETS ADOPTED FROM THE PEN BY JOE ---");
 console.log(store.getState());

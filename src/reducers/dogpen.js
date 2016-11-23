@@ -1,9 +1,8 @@
-import { combineReducers } from "redux";
-import { ADD_DOG, REMOVE_DOG, RENAME_DOG } from "../actiontypes/actionTypes"
+import { ADD_DOG_TO_PEN, REMOVE_DOG_FROM_PEN, RENAME_DOG } from "../actiontypes/actionTypes"
 
 function dogPen(state = [], action) {
   switch (action.type) {
-    case ADD_DOG:
+    case ADD_DOG_TO_PEN:
       return [
         ...state,
         {
@@ -13,8 +12,8 @@ function dogPen(state = [], action) {
           age: action.dog.age
         }
       ];
-    case REMOVE_DOG:
-      state.splice(action.index, 1);
+    case REMOVE_DOG_FROM_PEN:
+      state.splice(action.index.dogindex, 1);
       return state;
     case RENAME_DOG:
       return state.map((dog, index) => {
@@ -30,8 +29,4 @@ function dogPen(state = [], action) {
   };
 }
 
-const dogpenApp = combineReducers({
-  dogPen
-});
-
-export default dogpenApp
+export default dogPen
