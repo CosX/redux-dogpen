@@ -23,6 +23,7 @@ function dogPen(state = [], action) {
             name: action.dog.name
           });
         }
+        return dog;
       });
     default:
       return state;
