@@ -35,7 +35,7 @@ store.dispatch(addDog({
   age: 1
 }));
 
-console.log("--- ALL DOGS BEFORE CHANGE ---");
+console.log("--- ALL DOGS IN THE PEN ---");
 console.log(store.getState());
 
 store.dispatch(renameDog({
@@ -43,7 +43,7 @@ store.dispatch(renameDog({
   index: 1
 }));
 
-console.log("--- STEVE GETS RENAMED ---");
+console.log("--- STEVE GETS RENAMED TO CANDY ---");
 console.log(store.getState());
 
 store.dispatch(addPerson({
