@@ -1,14 +1,18 @@
-import { createStore, combineReducers } from 'redux';
-import dogpenreducer from './reducers/dogpen';
-import personreducer from './reducers/person';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import dogpen from './reducers/dogpen';
+import person from './reducers/person';
 import { addDog, adoptDog, renameDog, addPerson } from './actioncreators/actionCreators';
 
 let dogpenApp = combineReducers({
-  dogpenreducer,
-  personreducer
+  dogpen,
+  person
 });
 
-let store = createStore(dogpenApp);
+let store = createStore(
+  dogpenApp,
+  applyMiddleware(thunk)
+);
 
 store.dispatch(addDog({
   name: "pixie",

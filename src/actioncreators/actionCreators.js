@@ -14,9 +14,14 @@ export function addDog(dog = {}) {
 };
 
 export function adoptDog(index = {}) {
-  return {
-    type: REMOVE_DOG_FROM_PEN,
-    index
+  return (dispatch, getState) => {
+    const adopteddog = getState().dogpen[index.dogindex];
+
+    dispatch({
+      type: REMOVE_DOG_FROM_PEN,
+      index,
+      adopteddog
+    });
   };
 };
 
