@@ -1,4 +1,8 @@
-import { ADD_DOG_TO_PEN, REMOVE_DOG_FROM_PEN, RENAME_DOG } from "../actiontypes/actionTypes"
+import {
+  ADD_DOG_TO_PEN,
+  REMOVE_DOG_FROM_PEN,
+  RENAME_DOG 
+} from "../actiontypes/actionTypes"
 
 function dogPen(state = [], action) {
   switch (action.type) {
@@ -13,8 +17,9 @@ function dogPen(state = [], action) {
         }
       ];
     case REMOVE_DOG_FROM_PEN:
-      state.splice(action.index.dogindex, 1);
-      return state;
+      return state.filter((dog, index) => {
+        return index != action.index.dogindex
+      });
     case RENAME_DOG:
       return state.map((dog, index) => {
         if (index === action.dog.index) {
